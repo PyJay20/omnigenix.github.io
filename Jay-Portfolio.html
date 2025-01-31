@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .title {
+            margin: 0;
+            font-size: 3em;
+            animation: glow 1.5s infinite alternate;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .about, .projects {
+            padding: 60px 20px;
+        }
+        .project-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .project {
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        .project img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .project:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 1.1em;
+        }
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff0; }
+            to { text-shadow: 0 0 20px #fff, 0 0 40px #ff0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Welcome to My Portfolio</h1>
+        <p class="subtitle">Creative, Innovative & Just a Little Bit Fun</p>
+    </header>
+    
+    <section class="about">
+        <h2>About Me</h2>
+        <p>Hey there! I'm an IT enthusiast passionate about web design, cybersecurity, and making cool digital experiences. Let's build something amazing together!</p>
+    </section>
+    
+    <section class="projects">
+        <h2>Projects</h2>
+        <div class="project-icons">
+            <a href="#" class="project" id="project1">
+                <img src="project1.png" alt="Project 1">
+                <p>Project One</p>
+            </a>
+            <a href="#" class="project" id="project2">
+                <img src="project2.png" alt="Project 2">
+                <p>Project Two</p>
+            </a>
+            <a href="#" class="project" id="project3">
+                <img src="project3.png" alt="Project 3">
+                <p>Project Three</p>
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Contact me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </footer>
+    
+    <script>
+        gsap.from(".title", { duration: 1.5, y: -50, opacity: 0, ease: "bounce.out" });
+        gsap.from(".subtitle", { duration: 1.5, x: -100, opacity: 0, delay: 0.5 });
+        gsap.from(".project", { duration: 1, opacity: 0, stagger: 0.3, scale: 0.8 });
+        
+        document.querySelectorAll('.project').forEach(project => {
+            project.addEventListener('mouseenter', () => {
+                gsap.to(project, { rotation: 10, duration: 0.3 });
+            });
+            project.addEventListener('mouseleave', () => {
+                gsap.to(project, { rotation: 0, duration: 0.3 });
+            });
+        });
+    </script>
+</body>
+</html>
