@@ -1,8 +1,48 @@
-/* Reset for all elements */
+/* General reset for all devices */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #ffcc00, #00ff80, #0080ff);
+  animation: gradientMove 12s ease infinite;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hero h1 {
+  font-size: 4em;
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background: #1eb8fb;
+  border-radius: 5px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #ff0080;
 }
 
 /* Navigation Bar Styling */
@@ -10,16 +50,12 @@
   background: linear-gradient(180deg, #0d0d0d, #111111);
   box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.7);
   padding: 15px 0;
-  position: fixed; /* This keeps the navbar fixed at the top */
-  top: 0; /* Position at the very top */
-  left: 0; /* Align to the left edge */
-  width: 100%; /* Make sure it takes up full width */
-  z-index: 1000; /* Ensure it's above other elements */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   border-bottom: 3px solid #1eb8fb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0; /* Remove any margin */
 }
 
 #nav ul {
@@ -54,6 +90,56 @@
   background: rgba(30, 184, 251, 0.2);
   color: #1eb8fb;
   box-shadow: 0px 0px 15px rgba(30, 184, 251, 0.9);
+}
+
+/* Glowing Dropdown Menu */
+#nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 220px;
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.8);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#nav li:hover > ul {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+#nav ul ul li {
+  display: block;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+#nav ul ul li:last-child {
+  border-bottom: none;
+}
+
+#nav ul ul li a {
+  display: block;
+  padding: 12px;
+  color: #0ff;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+#nav ul ul li:hover {
+  background: rgba(30, 184, 251, 0.3);
+  box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+}
+
+#nav ul ul li a:hover {
+  color: #1eb8fb;
 }
 
 /* Mobile Navigation Adjustment */
