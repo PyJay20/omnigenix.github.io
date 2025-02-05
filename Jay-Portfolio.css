@@ -137,6 +137,19 @@
   margin-bottom: 30px;
 }
 
+.contact h3 {
+  font-size: 2em;
+  color: #1eb8fb;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.contact ul li a{
+  font-size: 20px;
+  color: #1eb8fb;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -162,7 +175,7 @@ button {
 }
 
 button:hover {
-  background: #ff0080;
+  background: #48ff00;
 }
 
 /* Footer */
@@ -195,3 +208,4 @@ footer a:hover {
     background-position: 0% 50%;
   }
 }
+
